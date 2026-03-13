@@ -1,41 +1,4 @@
-# Keycloak Integration Guide
-
-This document describes how to run Keycloak and integrate login with the Nuxt application using the Direct Access Grant (Resource Owner Password Credentials) flow.
-
----
-
-## Table of Contents
-
-- [Architecture Overview](#architecture-overview)
-- [Quick Start](#quick-start)
-- [Keycloak Client Setup](#keycloak-client-setup)
-- [API Documentation](#api-documentation)
-- [Environment Variables](#environment-variables)
-- [Optional: LDAP Federation](#optional-ldap-federation)
-
----
-
-## Architecture Overview
-
-```
-┌─────────────┐     POST /api/auth/login      ┌─────────────┐     Token / UserInfo      ┌─────────────┐
-│   Browser   │ ───────────────────────────► │  Nuxt App   │ ───────────────────────► │  Keycloak   │
-│  (Nuxt UI)  │     email + password          │  (Server)   │     OAuth2 / OpenID       │  (IAM)      │
-└─────────────┘                               └─────────────┘                           └─────────────┘
-       │                                             │
-       │                                             │ Sets signed session cookie
-       │                                             │ (kc_session)
-       │◄────────────────────────────────────────────┘
-       │
-       │  Subsequent requests include cookie
-       │  GET /api/auth/me validates session
-```
-
-- **Keycloak**: Identity provider (IAM) — handles user storage, authentication, and token issuance.
-- **Nuxt App**: Web application that authenticates users via Keycloak and maintains a signed session cookie.
-- **Flow**: Direct Access Grant — Nuxt server exchanges email/password for tokens with Keycloak, then stores a minimal session in a cookie.
-
----
+# Keycloak Setup Guide
 
 ## Quick Start
 
