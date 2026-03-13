@@ -12,14 +12,7 @@ docker compose up -d
 - **Keycloak Admin Console**: http://localhost:8080
 - **Default admin**: `admin` / `admin`
 
-### 2. Create Keycloak Client
-
-See [Keycloak Client Setup](#keycloak-client-setup) below.
-
-
----
-
-## Keycloak Client Setup
+## 2. Keycloak Client Setup
 
 In realm `master`:
 
