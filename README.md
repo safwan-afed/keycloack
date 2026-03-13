@@ -12,7 +12,7 @@ docker compose up -d
 - **Keycloak Admin Console**: http://localhost:8080
 - **Default admin**: `admin` / `admin`
 
-## 2. Keycloak Client Setup
+### 2. Keycloak Client Setup
 
 In realm `master`:
 
@@ -37,6 +37,17 @@ In realm `master`:
 ### Logout Redirect
 
 - **Valid post logout redirect URIs**: `http://localhost:3000/login`
+
+### 3. Create a Test User
+
+After that, create a user in Keycloak:
+
+1. Go to **Users** → **Add user**
+2. Set **Username** and **Email** (e.g. `user@example.com`)
+3. Click **Create**
+4. Open the **Credentials** tab → **Set password**
+5. Enter a password and turn **Temporary** off (so the user is not forced to change it on first login)
+6. Click **Save**
 
 ---
 
